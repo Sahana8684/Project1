@@ -8,6 +8,17 @@ This guide will walk you through the process of deploying the College Management
 2. [Git](https://git-scm.com/) installed on your local machine
 3. (Optional) A PostgreSQL database - only needed if you want persistent data storage. The application can run with an in-memory SQLite database for demonstration purposes.
 
+## Recent Updates for Vercel Compatibility
+
+We've made several changes to ensure compatibility with Vercel's serverless environment:
+
+1. Updated `requirements.txt` to use compatible package versions
+2. Changed Python version to 3.9 in `runtime.txt`
+3. Enhanced `vercel.json` configuration with proper settings
+4. Added error handling in `api/index.py`
+5. Created a `build.sh` script for the build process
+6. Set default environment variables for easier deployment
+
 ## Step 1: Prepare Your Project
 
 The project has already been configured for Vercel deployment with the following files:
