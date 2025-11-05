@@ -3,7 +3,12 @@
   "builds": [
     {
       "src": "api/index.py",
-      "use": "@vercel/python"
+      "use": "@vercel/python",
+      "config": {
+        "maxLambdaSize": "15mb",
+        "runtime": "python3.9",
+        "buildCommand": "./build.sh"
+      }
     },
     {
       "src": "web/static/**",
@@ -21,6 +26,10 @@
     }
   ],
   "env": {
-    "PYTHONPATH": "."
+    "PYTHONPATH": ".",
+    "USE_SQLITE_MEMORY": "true",
+    "SECRET_KEY": "vercel-deployment-secret-key",
+    "FIRST_SUPERUSER": "admin@example.com",
+    "FIRST_SUPERUSER_PASSWORD": "admin"
   }
 }
